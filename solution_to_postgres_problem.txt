@@ -1,0 +1,52 @@
+postgres=# \password postgres
+Enter new password:
+Enter it again:
+postgres=# ^Z
+[2]+  Stopped                 psql
+postgres@codexadmin-Inspiron-3542:~$ sudo service postgresql restart
+[sudo] password for postgres:
+Sorry, try again.
+[sudo] password for postgres:
+sudo: 1 incorrect password attempt
+postgres@codexadmin-Inspiron-3542:~$ psql
+psql (9.3.12)
+Type "help" for help.
+
+postgres=# ^C
+postgres=# sudopsql
+postgres-# ;
+ERROR:  syntax error at or near "sudopsql"
+LINE 1: sudopsql
+        ^
+postgres=# ^Z
+[3]+  Stopped                 psql
+postgres@codexadmin-Inspiron-3542:~$ sudo psql
+[sudo] password for postgres:
+Sorry, try again.
+[sudo] password for postgres:
+sudo: 1 incorrect password attempt
+postgres@codexadmin-Inspiron-3542:~$ psql
+psql (9.3.12)
+Type "help" for help.
+
+postgres=# createuser -P -s -e danny
+postgres-#
+postgres-# ;
+ERROR:  syntax error at or near "createuser"
+LINE 1: createuser -P -s -e danny
+        ^
+postgres=# createuser -P -s -e danny
+postgres-# ;
+ERROR:  syntax error at or near "createuser"
+LINE 1: createuser -P -s -e danny
+        ^
+postgres=# ^C
+postgres=# ^C
+postgres=# ^Z
+[4]+  Stopped                 psql
+postgres@codexadmin-Inspiron-3542:~$ createuser -P -s -e danny
+Enter password for new role:
+Enter it again:
+CREATE ROLE danny PASSWORD 'md5d0b3316fadf16ac548468d21d987a08e' SUPERUSER CREATEDB CREATEROLE INHERIT LOGIN;
+postgres@codexadmin-Inspiron-3542:~$
+postgres@codexadmin-Inspiron-3542:~$
